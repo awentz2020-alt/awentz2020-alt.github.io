@@ -1,0 +1,8 @@
+# Business planning scratch files
+budget_data.csv
+financial_projections.csv
+Pilates_Studio_Business_Plan.md
+make_resume.py
+.venv/
+__pycache__/
+*.pyc
