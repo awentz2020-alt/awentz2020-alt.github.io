@@ -3,12 +3,16 @@ budget_data.csv
 financial_projections.csv
 Pilates_Studio_Business_Plan.md
 make_resume.py
+generate_3d_intro.py
 .venv/
 __pycache__/
 *.pyc
 
-# Motion video intermediate build files
+# Intermediate build files
 videos/
 test_*.mp3
 test_*.raw
 *.log
+raw_veo_3d.mp4
+voiceover*.wav
+aegis_3d_poster.png

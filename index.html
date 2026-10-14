@@ -772,28 +772,38 @@
     </section>
 
     <!-- Cinematic Video Briefing -->
-    <section id="briefing" style="padding-top: 1rem; margin-bottom: 3rem;">
+    <section id="briefing" style="padding-top: 1rem; margin-bottom: 3.5rem;">
       <h2 class="section-title">
-        CINEMATIC AUDIOVISUAL DOSSIER
+        CINEMATIC 3D DOSSIER & VIDEO BRIEFING
         <span class="section-title-line"></span>
       </h2>
-      <div class="section-sub">// 1080P DECLASSIFIED MISSION BRIEFING • AI VOICE SYNTHESIS (GEMINI TTS)</div>
+      <div class="section-sub">// 3D NEURAL HERO RENDER (GOOGLE VEO 3.1) • GEMINI 3.8 DEEP VOICE SYNTHESIS</div>
 
-      <div style="background: var(--bg-card); border: 1px solid var(--border-cyan); border-radius: 16px; padding: 1.5rem; backdrop-filter: blur(16px); box-shadow: 0 10px 40px rgba(0,0,0,0.6), 0 0 30px var(--cyan-glow); display: flex; flex-direction: column; align-items: center;">
-        <div style="width: 100%; max-width: 1000px; position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0, 229, 255, 0.4); box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);">
-          <video controls playsinline poster="video_poster.png" preload="metadata" style="width: 100%; display: block; aspect-ratio: 16/9; background: #000;">
-            <source src="aegis_intro.mp4" type="video/mp4">
+      <!-- Video Mode Selector Tabs -->
+      <div style="display: flex; gap: 12px; margin-bottom: 1.2rem; flex-wrap: wrap;">
+        <button id="btn-vid-3d" onclick="switchVideo('3d')" class="btn-primary" style="padding: 0.6rem 1.4rem; font-size: 0.9rem; cursor: pointer; border: none;">
+          ⚡ 3D HERO INTRO (VEO 3.1)
+        </button>
+        <button id="btn-vid-motion" onclick="switchVideo('motion')" class="btn-secondary" style="padding: 0.6rem 1.4rem; font-size: 0.9rem; cursor: pointer;">
+          📊 TACTICAL MOTION AUDIT (44S)
+        </button>
+      </div>
+
+      <div style="background: var(--bg-card); border: 1px solid var(--border-cyan); border-radius: 16px; padding: 1.5rem; backdrop-filter: blur(16px); box-shadow: 0 10px 40px rgba(0,0,0,0.6), 0 0 35px var(--cyan-glow); display: flex; flex-direction: column; align-items: center;">
+        <div style="width: 100%; max-width: 1000px; position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0, 229, 255, 0.4); box-shadow: 0 0 30px rgba(0, 229, 255, 0.35);">
+          <video id="hero-video-player" controls playsinline poster="aegis_3d_poster.jpg" preload="metadata" style="width: 100%; display: block; aspect-ratio: 16/9; background: #000;">
+            <source id="hero-video-src" src="aegis_3d_intro.mp4" type="video/mp4">
             Your browser does not support HTML5 video playback.
           </video>
         </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1000px; margin-top: 1rem; flex-wrap: wrap; gap: 12px;">
-          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">
-            ⚡ Voiceprint: <b style="color: var(--border-cyan-bright);">Gemini 3.8 Charon (Deep Heroic Resonance)</b> • Resolution: <b style="color: #fff;">1080p 60fps</b>
+        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1000px; margin-top: 1.2rem; flex-wrap: wrap; gap: 12px;">
+          <div id="video-spec-info" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">
+            🎬 Mode: <b id="video-mode-name" style="color: #fff;">3D Superhero Reconnaissance (Google Veo 3.1)</b> • Voice: <b style="color: var(--border-cyan-bright);">Gemini 3.8 Charon (Deep Heroic Bass)</b>
           </div>
           <div style="display: flex; gap: 10px;">
-            <a href="aegis_intro.mp4" class="btn-secondary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;" download="Commander_Aegis_Briefing.mp4">
+            <a id="video-dl-btn" href="aegis_3d_intro.mp4" class="btn-secondary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;" download="Commander_Aegis_3D_Intro.mp4">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              DOWNLOAD MP4
+              DOWNLOAD 3D VIDEO (MP4)
             </a>
           </div>
         </div>
@@ -1120,6 +1130,37 @@
     window.addEventListener('resize', initCanvas);
     initCanvas();
     animate();
+
+    function switchVideo(type) {
+      const player = document.getElementById('hero-video-player');
+      const src = document.getElementById('hero-video-src');
+      const b3d = document.getElementById('btn-vid-3d');
+      const bMotion = document.getElementById('btn-vid-motion');
+      const modeName = document.getElementById('video-mode-name');
+      const dlBtn = document.getElementById('video-dl-btn');
+
+      if (type === '3d') {
+        player.pause();
+        player.poster = 'aegis_3d_poster.jpg';
+        src.src = 'aegis_3d_intro.mp4';
+        player.load();
+        b3d.className = 'btn-primary';
+        bMotion.className = 'btn-secondary';
+        modeName.innerText = '3D Superhero Reconnaissance (Google Veo 3.1)';
+        dlBtn.href = 'aegis_3d_intro.mp4';
+        dlBtn.setAttribute('download', 'Commander_Aegis_3D_Intro.mp4');
+      } else {
+        player.pause();
+        player.poster = 'video_poster.png';
+        src.src = 'aegis_intro.mp4';
+        player.load();
+        b3d.className = 'btn-secondary';
+        bMotion.className = 'btn-primary';
+        modeName.innerText = 'Tactical Motion Audit & Operations Log (GSAP 1080p)';
+        dlBtn.href = 'aegis_intro.mp4';
+        dlBtn.setAttribute('download', 'Commander_Aegis_Tactical_Briefing.mp4');
+      }
+    }
   </script>
 </body>
 </html>
