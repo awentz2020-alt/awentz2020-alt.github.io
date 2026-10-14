@@ -6,3 +6,9 @@ make_resume.py
 .venv/
 __pycache__/
 *.pyc
+
+# Motion video intermediate build files
+videos/
+test_*.mp3
+test_*.raw
+*.log

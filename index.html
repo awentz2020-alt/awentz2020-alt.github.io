@@ -719,6 +719,7 @@
       </a>
       <nav class="nav-links">
         <a href="#profile">PROFILE</a>
+        <a href="#briefing">BRIEFING</a>
         <a href="#capabilities">CAPABILITIES</a>
         <a href="#missions">OPERATIONS</a>
         <a href="#accreditations">ACCREDITATIONS</a>
@@ -760,9 +761,42 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
           DOWNLOAD OFFICIAL RESUME (.DOCX)
         </a>
-        <a href="#missions" class="btn-secondary">
-          EXPLORE 10-YEAR MISSION LOGS
+        <a href="#briefing" class="btn-secondary" style="border-color: var(--border-cyan-bright); background: rgba(0, 229, 255, 0.1);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          WATCH VIDEO BRIEFING
         </a>
+        <a href="#missions" class="btn-secondary">
+          EXPLORE MISSION LOGS
+        </a>
+      </div>
+    </section>
+
+    <!-- Cinematic Video Briefing -->
+    <section id="briefing" style="padding-top: 1rem; margin-bottom: 3rem;">
+      <h2 class="section-title">
+        CINEMATIC AUDIOVISUAL DOSSIER
+        <span class="section-title-line"></span>
+      </h2>
+      <div class="section-sub">// 1080P DECLASSIFIED MISSION BRIEFING • AI VOICE SYNTHESIS (GEMINI TTS)</div>
+
+      <div style="background: var(--bg-card); border: 1px solid var(--border-cyan); border-radius: 16px; padding: 1.5rem; backdrop-filter: blur(16px); box-shadow: 0 10px 40px rgba(0,0,0,0.6), 0 0 30px var(--cyan-glow); display: flex; flex-direction: column; align-items: center;">
+        <div style="width: 100%; max-width: 1000px; position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0, 229, 255, 0.4); box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);">
+          <video controls playsinline poster="video_poster.png" preload="metadata" style="width: 100%; display: block; aspect-ratio: 16/9; background: #000;">
+            <source src="aegis_intro.mp4" type="video/mp4">
+            Your browser does not support HTML5 video playback.
+          </video>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1000px; margin-top: 1rem; flex-wrap: wrap; gap: 12px;">
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">
+            ⚡ Voiceprint: <b style="color: var(--border-cyan-bright);">Gemini 3.8 Charon (Deep Heroic Resonance)</b> • Resolution: <b style="color: #fff;">1080p 60fps</b>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <a href="aegis_intro.mp4" class="btn-secondary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;" download="Commander_Aegis_Briefing.mp4">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              DOWNLOAD MP4
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
